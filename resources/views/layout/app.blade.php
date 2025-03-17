@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $content['title'] }}</title>
+    <title>@yield('title', 'Default Title')</title>
+    <script src="{{ asset('JS\jquery-3.6.0.js') }}"></script>
+    <script src="{{ asset('JS\jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('JS\bootstrap5.3.2.js') }}"></script>
     <script src="{{ asset('JS\swiper11.js') }}"></script>
     <link href="{{ asset('css\global.css') }}" rel="stylesheet">
@@ -24,12 +26,45 @@
             <li><a href="#">Penggajian</a></li>
             <li><a href="#">Pengaturan</a></li>
         </ul>
-        <button class="logout-btn">Logout</button>
+        <div class="user-menu">
+            <div class="user-icon">
+                <span>John Doe</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <ul class="dropdown-menu">
+                <li><a href="#">Profil</a></li>
+                <li><a href="#">Pengaturan</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
     </div>
+
     <div class="content">
         @yield('body')
     </div>
+
     <footer>
         <p>&copy; 2025 Kotajati Furindo. All rights reserved.</p>
     </footer>
+
+    <script>
+        $(document).ready(function() {
+            $(".user-menu").click(function(event) {
+                event.stopPropagation();
+                $(".dropdown-menu").toggle();
+            });
+
+            $(document).click(function() {
+                $(".dropdown-menu").hide();
+            });
+
+            $(".dropdown-menu").click(function(event) {
+                event.stopPropagation();
+            });
+
+            $("#logout").click(function() {
+                alert("Logout berhasil!");
+            });
+        });
+    </script>
 </body>
