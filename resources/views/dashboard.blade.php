@@ -1,6 +1,5 @@
 @extends('layout.app')
 @section('title', 'DASHBOARD')
-</head>
 <style>
     * {
         margin: 0;
@@ -129,10 +128,6 @@
             <h3>Posisi Kosong</h3>
             <p>5</p>
         </div>
-        <div class="card purple">
-            <h3>Gaji Dibayarkan</h3>
-            <p>Rp 500.000.000</p>
-        </div>
     </div>
 
     <!-- Grafik Kehadiran -->
@@ -141,7 +136,7 @@
     </div>
 
     <!-- Tabel Karyawan -->
-    <h3>Daftar Karyawan</h3>
+    <h3>Activity Karyawan</h3>
     <table>
         <thead>
             <tr>

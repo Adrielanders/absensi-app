@@ -9,10 +9,12 @@
     <script src="{{ asset('JS\jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('JS\bootstrap5.3.2.js') }}"></script>
     <script src="{{ asset('JS\swiper11.js') }}"></script>
+    <script src="{{ asset('JS\fontawesome.js') }}"></script>
     <link href="{{ asset('css\global.css') }}" rel="stylesheet">
     <link href="{{ asset('css\bootstrap5.3.2.css') }}" rel="stylesheet">
     <link href="{{ asset('css\swiper11.css') }}" rel="stylesheet">
     <link href="{{ asset('css\googleapis.css') }}" rel="stylesheet">
+    <link href="{{ asset('css\fontawesome.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -20,7 +22,7 @@
         <div class="logo">HR System</div>
         <ul class="nav-links">
             <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Karyawan</a></li>
+            <li><a href="{{route('karyawan')}}">Karyawan</a></li>
             <li><a href="#">Departemen</a></li>
             <li><a href="#">Kehadiran</a></li>
             <li><a href="#">Penggajian</a></li>
@@ -49,21 +51,13 @@
 
     <script>
         $(document).ready(function() {
-            $(".user-menu").click(function(event) {
-                event.stopPropagation();
-                $(".dropdown-menu").toggle();
+            $(".user-menu").click(function() {
+                $(".user-menu").toggleClass("active");
             });
-
-            $(document).click(function() {
-                $(".dropdown-menu").hide();
-            });
-
-            $(".dropdown-menu").click(function(event) {
-                event.stopPropagation();
-            });
-
-            $("#logout").click(function() {
-                alert("Logout berhasil!");
+            $(document).click(function(event) {
+                if (!$(event.target).closest(".user-menu").length) {
+                    $(".user-menu").removeClass("active");
+                }
             });
         });
     </script>
