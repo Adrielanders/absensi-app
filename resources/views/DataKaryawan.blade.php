@@ -33,20 +33,22 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Nama</th>
-                <th>Jabatan</th>
-                <th>Email</th>
-                <th>Aksi</th>
+                <th>NIK KARYAWAN</th>
+                <th>NAMA</th>
+                <th>JENIS KELAMIN</th>
+                <th>JABATAN</th>
+                <th>MASA KERJA</th>
+                <th>ACTION</th>
             </tr>
         </thead>
         @foreach($Data as $dt)
         <tbody id="employeeTable">
             <tr>
-                <td>1</td>
-                <td>John Doe</td>
-                <td>Manager</td>
-                <td>johndoe@example.com</td>
+                <td>{{$dt->nik_karyawan}}</td>
+                <td>{{$dt->nama_karyawan}}</td>
+                <td>{{ $dt->jenis_kelamin == 'L' ? 'Laki-laki' : 'Perempuan' }}</td>
+                <td>{{$dt->jabatan}}</td>
+                <td>{{$dt->masa_kerja}}</td>
                 <td>
                     <button class="btn btn-warning btn-sm"><i class="fa fa-pencil" aria-hidden="true"></i></button>
                     <button class="btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></button>
