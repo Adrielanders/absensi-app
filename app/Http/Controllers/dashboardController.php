@@ -8,6 +8,9 @@ use App\Models\Karyawan;
 
 class dashboardController extends Controller
 {
+    public function Index(){
+        return view('dashboard');
+    }
     public function ToInputData()
     {
         $Karyawan = new Karyawan;

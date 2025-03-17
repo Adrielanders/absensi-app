@@ -24,7 +24,7 @@
     <div class="navbar">
         <div class="logo">HR System</div>
         <ul class="nav-links">
-            <li><a href="#">Dashboard</a></li>
+            <li><a href="{{route('Index')}}">Dashboard</a></li>
             <li><a href="{{route('karyawan')}}">Karyawan</a></li>
             <li><a href="#">Departemen</a></li>
             <li><a href="#">Kehadiran</a></li>
