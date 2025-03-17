@@ -32,5 +32,11 @@ class karyawanController extends Controller
         return redirect()->back()->with('success', 'Data Karyawan Berhasil Disimpan!');
     }
 
+    public function delete(Request $request){
+        $id = $request->id;
+        $Karyawan = new Karyawan;
 
+        $checkData = $Karyawan->where('id_karyawan', $id)->delete();
+        return response()->json(['status' => true,'message' => 'Data deleted successfully']);
+    }
 }

@@ -17,4 +17,5 @@ Route::middleware('auth')->group(function () {
     Route::any('/Karyawan', [dashboardController::class, 'ToInputData'])->name('karyawan');
 
     Route::any('/store', [karyawanController::class, 'store'])->name('store');
+    Route::any('/delete', [karyawanController::class, 'delete'])->name('deleteData');
 });

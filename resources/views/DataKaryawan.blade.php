@@ -1,6 +1,5 @@
 @extends('layout.app')
 @section('title', 'DATA KARYAWAN')
-
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -46,12 +45,12 @@
             <tr>
                 <td>{{$dt->nik_karyawan}}</td>
                 <td>{{$dt->nama_karyawan}}</td>
-                <td>{{ $dt->jenis_kelamin == 'L' ? 'Laki-laki' : 'Perempuan' }}</td>
+                <td>{{$dt->jenis_kelamin == 'L' ? 'Laki-laki' : 'Perempuan' }}</td>
                 <td>{{$dt->jabatan}}</td>
                 <td>{{$dt->masa_kerja}}</td>
                 <td>
-                    <button class="btn btn-warning btn-sm"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                    <button class="btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    <button class="btn btn-warning btn-sm btnEdit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                    <button class="btn btn-danger btn-sm btnDelete" data-id="{{$dt->id_karyawan}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
                 </td>
             </tr>
         </tbody>
@@ -73,7 +72,7 @@
                     <div class="row">
                         <!-- Kolom Kiri -->
                         <div class="col-md-6">
-                        <div class="mb-3">
+                            <div class="mb-3">
                                 <label for="nik_karyawan" class="form-label">Nama Karyawan</label>
                                 <input type="text" class="form-control" id="nama_karyawan" name="nama_karyawan" required>
                             </div>
@@ -165,10 +164,46 @@
         </div>
     </div>
 </div>
+
 <script>
     $(document).ready(function() {
 
+    $('.btnDelete').click(function() {
+        var id = $(this).data('id');
+
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: "Data ini akan dihapus secara permanen!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Ya, Hapus!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: "{{route('deleteData')}}",
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        id : id,
+                    },
+                    success: function(response) {
+                        if (response.status == true) {
+                            succesDelete("Data Terhapus");
+                            window.location.reload(true);
+                        } else {
+                            Swal.fire('Gagal!', 'Terjadi kesalahan.', 'error');
+                        }
+                    }
+                });
+            }
+        });
     });
+    });
+
 </script>
 
 @stop
