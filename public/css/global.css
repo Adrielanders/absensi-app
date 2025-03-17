@@ -1,0 +1,294 @@
+/* Menghilangkan margin bawaan */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+/* Hero Section */
+header {
+    position: relative;
+    color: white;
+    text-align: center;
+    height: 60vh;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    z-index: 2;
+}
+
+header p {
+    font-size: 1.2rem;
+    z-index: 2;
+}
+
+.btn-lg {
+    font-size: 1rem;
+    padding: 12px 24px;
+}
+
+/* Card Section */
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Footer */
+footer {
+    font-size: 0.9rem;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(10px);
+    /* Efek kaca */
+    transition: background 0.3s ease-in-out;
+    /* Efek smooth */
+}
+
+.navbar:hover {
+    background: rgba(255, 255, 255, 0.3);
+
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    /* Mencegah overlay menghalangi klik */
+}
+
+.team {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.team-member {
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.team-member img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.team-member h3 {
+    font-size: 1.6em;
+    margin: 15px 0;
+}
+
+.team-member p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.products {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.product {
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+}
+
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product h3 {
+    font-size: 1.6em;
+    margin: 15px 0;
+}
+
+.product p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+.btn {
+    padding: 10px 20px;
+    color: white;
+    background-color: #0d47a1;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1565c0;
+}
+
+
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+section p {
+    font-size: 1.2rem;
+    color: #6c757d;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.75;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper:hover .swiper-button-next,
+.swiper:hover .swiper-button-prev {
+    opacity: 1;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 20px;
+    color: #333;
+}
+
+.swiper {
+    overflow: visible !important;
+    z-index: 9999;
+}
+
+.swiper-wrapper {
+    overflow: visible !important;
+    z-index: 9999;
+}
+
+.swiper-slide {
+    overflow: visible !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide .card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    max-height: 100%;
+}
+
+.swiper-slide:hover .card {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.swiper-slide .card-img-top {
+    object-fit: cover;
+    height: 150px;
+
+}
+
+.swiper-slide:hover {
+    z-index: 99;
+    position: relative;
+}
+
+.container {
+    overflow: visible !important;
+}
+
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    z-index: 10;
+    position: relative;
+}
+
