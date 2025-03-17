@@ -32,6 +32,7 @@
     <table class="table table-bordered">
         <thead>
             <tr>
+                <th>Image</th>
                 <th>NIK KARYAWAN</th>
                 <th>NAMA</th>
                 <th>JENIS KELAMIN</th>
@@ -43,6 +44,9 @@
         @foreach($Data as $dt)
         <tbody id="employeeTable">
             <tr>
+                <td>
+                <img src="{{ $dt->foto_url }}" width="100" alt="Foto Karyawan">
+                </td>
                 <td>{{$dt->nik_karyawan}}</td>
                 <td>{{$dt->nama_karyawan}}</td>
                 <td>{{$dt->jenis_kelamin == 'L' ? 'Laki-laki' : 'Perempuan' }}</td>
@@ -72,6 +76,10 @@
                     <div class="row">
                         <!-- Kolom Kiri -->
                         <div class="col-md-6">
+                            <div class="mb-3">
+                                <label>Upload Foto</label>
+                            <input type="file" name="foto_karyawan" accept="image/*">
+                            </div>
                             <div class="mb-3">
                                 <label for="nik_karyawan" class="form-label">Nama Karyawan</label>
                                 <input type="text" class="form-control" id="nama_karyawan" name="nama_karyawan" required>

@@ -14,6 +14,7 @@ Route::any('/login', [UserController::class, 'login'])->name('login');
 
 Route::middleware('auth')->group(function () {
     // BERHUBUNGAN DENGAN DASHBOARD
+    Route::any('/Index', [dashboardController::class, 'Index'])->name('Index');
     Route::any('/Karyawan', [dashboardController::class, 'ToInputData'])->name('karyawan');
 
     Route::any('/store', [karyawanController::class, 'store'])->name('store');

@@ -22,16 +22,16 @@
 
 <body>
     <div class="navbar">
-        <div class="logo">HR System</div>
-        <ul class="nav-links">
-            <li><a href="#">Dashboard</a></li>
+        <div class="logo p-3">HR System</div>
+        <ul class="nav-links mt-3">
+            <li><a href="{{route('Index')}}">Dashboard</a></li>
             <li><a href="{{route('karyawan')}}">Karyawan</a></li>
             <li><a href="#">Departemen</a></li>
             <li><a href="#">Kehadiran</a></li>
             <li><a href="#">Penggajian</a></li>
             <li><a href="#">Pengaturan</a></li>
         </ul>
-        <div class="user-menu">
+        <div class="user-menu me-3">
             <div class="user-icon">
                 <span>John Doe</span>
                 <i class="fas fa-chevron-down"></i>
